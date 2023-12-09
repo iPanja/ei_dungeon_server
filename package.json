@@ -1,0 +1,10 @@
+{
+  "name": "socket-ei-trading",
+  "version": "1.0.0",
+  "description": "socket trading for EI",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2"
+  }
+}
