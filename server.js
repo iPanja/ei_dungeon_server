@@ -138,8 +138,8 @@ io.on('connection', (socket) => {
     // Player leaves lobby
     socket.on('leaveGame', (hostId, playerId) => {
         console.log("player left game " + playerId);
-        console.log(lobbies[hostId].players[playerId]);
-        console.log(lobbies[hostId]);
+        //console.log(lobbies[hostId].players[playerId]);
+        //console.log(lobbies[hostId]);
 
         var playerName = lobbies[hostId].players[playerId].name;
 
@@ -183,6 +183,13 @@ io.on('connection', (socket) => {
                 hostSocket.emit('playerAction', actionData);
             }
         }
+    });
+
+    socket.on('ping', (ack) => {
+        ack({
+            status: "ok",
+            socketId: socket.id
+        });
     });
 });
 
